@@ -1,0 +1,36 @@
+┌─────────────┐      ┌──────────────┐      ┌───────────┐      ┌──────────────┐
+│   Users     │      │  Apartments  │      │   Floors  │      │    Units     │
+├─────────────┤      ├──────────────┤      ├───────────┤      ├──────────────┤
+│ id (PK)     │◄────┤ owner_id (FK) │      │ id (PK)   │◄────┤ floor_id (FK) │
+│ name        │      │ name         │◄────┤ apt_id (FK)│      │ unit_number  │
+│ username    │      │ address      │      │ floor_num │      │ monthly_rent │
+│ email       │      │ caretaker    │      │ units_cnt │      │ status       │
+│ phone       │      │ floors_cnt   │      └───────────┘      │ tenant_id(FK)│
+│ password    │      │ units_floor  │                         └──────────────┘
+│ role        │      └──────────────┘                                │
+└─────────────┘            │                                         │
+                           │                                         ▼
+                    ┌──────────────┐                        ┌──────────────┐
+                    │  RentLogs    │                        │   Tenants    │
+                    ├──────────────┤                        ├──────────────┤
+                    │ id (PK)      │◄──────────────────────┤ unit_id (FK) │
+                    │ tenant_id(FK)│                        │ name         │
+                    │ unit_id (FK) │                        │ phone        │
+                    │ month        │                        │ national_id  │
+                    │ due_date     │                        │ move_in_date │
+                    │ amount_due   │                        │ move_out_date│
+                    │ amount_paid  │                        │ monthly_rent │
+                    │ status       │                        │ active       │
+                    └──────────────┘                        └──────────────┘
+                           │
+                           ▼
+                    ┌──────────────┐
+                    │ Payments     │
+                    ├──────────────┤
+                    │ id (PK)      │
+                    │ rentlog_id(FK)│
+                    │ amount       │
+                    │ paid_at      │
+                    │ method       │
+                    │ note         │
+                    └──────────────┘
