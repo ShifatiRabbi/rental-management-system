@@ -55,7 +55,7 @@ const Dashboard = () => {
     }
   };
 
-  const StatCard = ({ title, value, icon: color }) => (
+  const StatCard = ({ title, value, icon: Icon, color }) => (
     <div className="card">
       <div className="flex items-center">
         <div className={`p-3 rounded-lg ${color}`}>

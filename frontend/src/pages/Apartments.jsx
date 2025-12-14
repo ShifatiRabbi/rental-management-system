@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import ApartmentService from '../services/apartmentService';
 import { toast } from 'react-hot-toast';
-import { HiPlus, HiTrash, HiPencil, HiEye } from 'react-icons/hi2';
+import { HiPlus, HiTrash, HiPencil, HiEye, HiBuildingOffice2 } from 'react-icons/hi2';
 
 const Apartments = () => {
   const [showForm, setShowForm] = useState(false);

@@ -6,12 +6,13 @@ import { toast } from 'react-hot-toast';
 import { format, subMonths } from 'date-fns';
 import {
   HiChartBar,
-  HiDocumentDownload,
+  HiArrowDownTray,
   HiCalendar,
   HiBuildingOffice2,
   HiCurrencyDollar,
   HiUserGroup,
-  HiExclamationTriangle
+  HiExclamationTriangle,
+  HiCheckCircle 
 } from 'react-icons/hi2';
 
 const Reports = () => {
@@ -105,7 +106,7 @@ const Reports = () => {
     }
   };
 
-  const StatCard = ({ title, value, icon: color, subtitle }) => (
+  const StatCard = ({ title, value, icon: Icon, color, subtitle }) => (
     <div className="card">
       <div className="flex items-center">
         <div className={`p-3 rounded-lg ${color}`}>
@@ -131,14 +132,14 @@ const Reports = () => {
             onClick={() => handleExport('tenants')}
             className="btn btn-secondary"
           >
-            <HiDocumentDownload className="h-5 w-5 mr-2" />
+            <HiArrowDownTray className="h-5 w-5 mr-2" />
             Export Tenants
           </button>
           <button
             onClick={() => handleExport('payments')}
             className="btn btn-secondary"
           >
-            <HiDocumentDownload className="h-5 w-5 mr-2" />
+            <HiArrowDownTray className="h-5 w-5 mr-2" />
             Export Payments
           </button>
         </div>
